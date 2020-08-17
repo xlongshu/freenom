@@ -15,15 +15,15 @@
 name: Run it on action
 
 on:
-  push:
-    branches:
-      - master
+  watch:
+    types: started
   schedule:
     - cron: 00 02 * * *
 jobs:
   run-it:
     runs-on: ubuntu-18.04
     name: Run it on action
+    if: github.event.repository.owner.id == github.event.sender.id
     steps:
       - name: Checkout master
         uses: actions/checkout@v2
