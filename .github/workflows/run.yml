@@ -18,7 +18,7 @@ on:
   watch:
     types: started
   schedule:
-    - cron: 00 02 * * *
+    - cron: 00 01 * * 2,6
 jobs:
   run-it:
     runs-on: ubuntu-18.04
